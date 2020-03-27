@@ -22,8 +22,9 @@ import com.filesloader.tm.service.TaskServiceImpl;
 import com.filesloader.tm.service.TeamServiceImpl;
 import com.filesloader.tm.service.TeamSkillServiceImpl;
 
-public class LoaderDaemonController implements IFileController {
+import org.apache.log4j.Logger;
 
+public class LoaderDaemonController implements IFileController {
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("teamDb");
 
     private EntityManager _entityManager;
@@ -94,7 +95,7 @@ public class LoaderDaemonController implements IFileController {
 
             teamSkill.setTeamId(content[0]);
             teamSkill.setSkill(content[1]);
-            
+
             _teamSkillService.save(teamSkill);
         }
     }

@@ -6,7 +6,11 @@ import javax.persistence.EntityTransaction;
 
 import com.filesloader.tm.entity.Task;
 
+import org.apache.log4j.Logger;
+
 public class TaskDAOImpl implements ITaskDAO {
+
+    final static Logger logger = Logger.getLogger(TaskDAOImpl.class);
 
     private EntityManager _entityManager;
 
@@ -43,6 +47,8 @@ public class TaskDAOImpl implements ITaskDAO {
             if (e != null) {
                 et.rollback();
             }
+
+            logger.error("Error while saving data => " + e);
 
             return false;
 

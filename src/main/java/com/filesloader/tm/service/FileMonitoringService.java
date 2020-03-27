@@ -11,7 +11,11 @@ import java.util.Map;
 import com.filesloader.tm.contracts.IFileController;
 import com.filesloader.tm.contracts.IFileReader;
 
+import org.apache.log4j.Logger;
+
 public class FileMonitoringService extends Thread {
+
+    final static Logger logger = Logger.getLogger(FileMonitoringService.class);
 
     private final String _folderPath;
     private final IFileReader _fileReader;
@@ -31,7 +35,7 @@ public class FileMonitoringService extends Thread {
         final WatchService watchService = FileSystems.getDefault().newWatchService();
 
         final Path directory = Paths.get(_folderPath);
-        //"/home/minhaj/Documents/tm-assessment-files");
+        // "/home/minhaj/Documents/tm-assessment-files");
 
         final WatchKey watchKey = directory.register(watchService, StandardWatchEventKinds.ENTRY_CREATE);
 
@@ -42,23 +46,32 @@ public class FileMonitoringService extends Thread {
                 System.out.println(event.kind());
                 final Path file = directory.resolve((Path) event.context());
 
-                System.out.println(file.getFileName());
-
-                System.out.println(file + " was last modified at " + file.toFile().lastModified());
+                logger.info("Reading file content => " + file);
 
                 // TODO: Read all three files one by one here
                 final List<String[]> data = _fileReader.readFile(file);
 
                 filesContent.put(file.getFileName().toString(), data);
 
+                logger.info("Pushing data to DB Started");
+
                 pushFileToDB(filesContent);
 
-                // Call Dao to Insert Data in MySQL DB
+                logger.info("Pushing data to DB Completed");
+
+                logger.info("Deleting file ==> " + file);
+
+                if (file.toFile().delete()) {
+                    logger.info("File Deleted ==> " + file);
+                } else {
+                    logger.info("Unable to Delete file  ==> " + file);
+                }
+
                 // Then delete all those files.
             }
 
             // if(isFileReadyToBePushed) {
-            //     pushFileToDB(filesContent);
+            // pushFileToDB(filesContent);
             // }
         }
     }

@@ -6,7 +6,10 @@ import com.filesloader.tm.dao.ITeamSkillDAO;
 import com.filesloader.tm.entity.Task;
 import com.filesloader.tm.entity.TeamSkill;
 
+import org.apache.log4j.Logger;
+
 public class TeamSkillServiceImpl implements ITeamSkillService {
+    final static Logger logger = Logger.getLogger(TeamSkillServiceImpl.class);
 
     private ITeamSkillDAO _teamSkillDAO;
 
@@ -28,7 +31,14 @@ public class TeamSkillServiceImpl implements ITeamSkillService {
 
     @Override
     public void save(TeamSkill theTeamSkill) {
-        _teamSkillDAO.save(theTeamSkill);
+         boolean result = _teamSkillDAO.save(theTeamSkill);
+
+         if(result){
+            logger.info("Saved data => "+ theTeamSkill.getTeamId());
+            return;
+         } 
+
+         logger.error("Error while saving data => "+ theTeamSkill.getTeamId());
     }
 
     @Override

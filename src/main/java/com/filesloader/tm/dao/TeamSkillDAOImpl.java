@@ -8,7 +8,10 @@ import javax.persistence.EntityTransaction;
 import com.filesloader.tm.entity.Task;
 import com.filesloader.tm.entity.TeamSkill;
 
+import org.apache.log4j.Logger;
+
 public class TeamSkillDAOImpl implements ITeamSkillDAO {
+    final static Logger logger = Logger.getLogger(TeamDAOImpl.class);
 
     private EntityManager _entityManager;
 
@@ -45,6 +48,8 @@ public class TeamSkillDAOImpl implements ITeamSkillDAO {
             if (e != null) {
                 et.rollback();
             }
+
+            logger.error("Error while saving data => " + e);
 
             return false;
 
