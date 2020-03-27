@@ -94,7 +94,7 @@ public class LoaderDaemonController implements IFileController {
 
             teamSkill.setTeamId(content[0]);
             teamSkill.setSkill(content[1]);
-            _entityManager
+            
             _teamSkillService.save(teamSkill);
         }
     }
