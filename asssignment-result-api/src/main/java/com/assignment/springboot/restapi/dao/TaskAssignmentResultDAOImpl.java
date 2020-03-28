@@ -35,24 +35,13 @@ public class TaskAssignmentResultDAOImpl implements ITaskAssignmentResultDAO {
 	}
 
 	@Override
-	public AssignmentResult findById(final int theId) {
-
-		// get assignmentResult
-		final AssignmentResult assignmentResult = 
-				entityManager.find(AssignmentResult.class, theId);
-		
-		// return assignmentResult
-		return assignmentResult;
-	}
-
-	@Override
 	public void save(final AssignmentResult assignmentResult) {
 
 		// save or update the assignmentResult
 		final AssignmentResult dbAssignmentResult = entityManager.merge(assignmentResult);
 		
 		// update with id from db ... so we can get generated id for save/insert
-		assignmentResult.setAssignmentResultId(dbAssignmentResult.getAssignmentResultId());
+		assignmentResult.setId(dbAssignmentResult.getId());
 		
 	}
 
@@ -66,6 +55,12 @@ public class TaskAssignmentResultDAOImpl implements ITaskAssignmentResultDAO {
 		theQuery.setParameter("assignmentResultId", theId);
 		
 		theQuery.executeUpdate();
+	}
+
+	@Override
+	public AssignmentResult findById(int theId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

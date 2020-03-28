@@ -62,7 +62,7 @@ public class FileMonitoringService extends Thread {
                     logger.info("File Deleted ==> " + file);
                 } else {
                     logger.error("Unable to Delete file  ==> " + file);
-                }                
+                }
             }
         }
     }

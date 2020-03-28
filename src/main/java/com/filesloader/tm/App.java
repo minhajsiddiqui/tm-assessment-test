@@ -6,6 +6,7 @@ import com.filesloader.tm.contracts.IFileReader;
 import com.filesloader.tm.controller.LoaderDaemonController;
 import com.filesloader.tm.service.CSVFileReader;
 import com.filesloader.tm.service.FileMonitoringService;
+import com.filesloader.tm.service.TaskAssignmentService;
 
 import java.io.IOException;
 import java.util.Map;
@@ -27,6 +28,11 @@ public final class App {
         IFileController fileController = new LoaderDaemonController();
 
         Thread fileMonitoringThread = new FileMonitoringService(props.get(Constants.FILE_PATH), fileReader, fileController);
-        fileMonitoringThread.start();        
+        fileMonitoringThread.setName("File Monitoring Thread");
+        fileMonitoringThread.start(); 
+        
+        Thread taskAssignmentService  = new TaskAssignmentService();
+        taskAssignmentService.setName("Task Assignment Service Thread");
+        taskAssignmentService.start();
     }
 }

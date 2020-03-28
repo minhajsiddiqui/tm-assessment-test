@@ -50,12 +50,6 @@ public class AssignmentResultRestController {
 	
 	@PostMapping("/assignmentResults")
 	public AssignmentResult addassignmentResult(@RequestBody AssignmentResult theassignmentResult) {
-		
-		// also just in case they pass an id in JSON ... set id to 0
-		// this is to force a save of new item ... instead of update
-		
-		theassignmentResult.setAssignmentResultId(0);
-		
 		assignmentResultService.save(theassignmentResult);
 		
 		return theassignmentResult;

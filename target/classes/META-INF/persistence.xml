@@ -10,6 +10,7 @@
         <class>com.filesloader.tm.entity.Task</class>
         <class>com.filesloader.tm.entity.Team</class>
         <class>com.filesloader.tm.entity.TeamSkill</class>
+        <class>com.filesloader.tm.entity.TeamTask</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/teamDb" />
             <property name="javax.persistence.jdbc.user" value="dbadmin" />

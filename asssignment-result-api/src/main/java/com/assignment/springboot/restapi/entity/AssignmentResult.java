@@ -1,5 +1,7 @@
 package com.assignment.springboot.restapi.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,39 +10,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="assignmentResult")
-public class AssignmentResult {
+@Table(name = "assignmentResult")
+public class AssignmentResult implements Serializable {
 
-	// define fields
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="assignment_result_id")
-	private int assignmentResultId;
-	
-	@Column(name="task_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", updatable = false, nullable = false)
+	private int Id;
+
+	@Column(name = "team_id", nullable = false)
+	private String teamId;
+
+	@Column(name = "task_id", nullable = false)
 	private String taskId;
-	
-	@Column(name="skill")
-	private String skill;
-	
-	public AssignmentResult() {
-		
+
+	public void setId(int Id) {
+		this.Id = Id;
 	}
 
-	public AssignmentResult(String taskId, String skill) {
-		this.taskId = taskId;
-		this.skill = skill;
+	public int getId() {
+		return Id;
 	}
 
-	// define getter/setter
-	
-	public int getAssignmentResultId() {
-		return assignmentResultId;
-	}
-
-	public void setAssignmentResultId(int id) {
-		this.assignmentResultId = id;
+	public String getTeamId() {
+		return teamId;
 	}
 
 	public String getTaskId() {
@@ -51,22 +46,7 @@ public class AssignmentResult {
 		this.taskId = taskId;
 	}
 
-	public String getSkill() {
-		return skill;
+	public void setTeamId(String teamId) {
+		this.teamId = teamId;
 	}
-
-	public void setSkill(String skill) {
-		this.skill = skill;
-	}		
 }
-
-
-
-
-
-
-
-
-
-
-

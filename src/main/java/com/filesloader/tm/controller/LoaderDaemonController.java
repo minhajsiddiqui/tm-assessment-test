@@ -12,15 +12,18 @@ import com.filesloader.tm.contracts.IFileController;
 import com.filesloader.tm.dao.TaskDAOImpl;
 import com.filesloader.tm.dao.TeamDAOImpl;
 import com.filesloader.tm.dao.TeamSkillDAOImpl;
+import com.filesloader.tm.dao.TeamTaskDAOImpl;
 import com.filesloader.tm.entity.Task;
 import com.filesloader.tm.entity.Team;
 import com.filesloader.tm.entity.TeamSkill;
 import com.filesloader.tm.service.ITaskService;
 import com.filesloader.tm.service.ITeamService;
 import com.filesloader.tm.service.ITeamSkillService;
+import com.filesloader.tm.service.ITeamTaskService;
 import com.filesloader.tm.service.TaskServiceImpl;
 import com.filesloader.tm.service.TeamServiceImpl;
 import com.filesloader.tm.service.TeamSkillServiceImpl;
+import com.filesloader.tm.service.TeamTaskServiceImpl;
 
 import org.apache.log4j.Logger;
 
