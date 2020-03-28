@@ -34,6 +34,33 @@ Each project is divided into three layers at most.
 3. Controller
     LoaderDaemonController initiated all Database call.
 
+* TeamTaskServiceImpl is taking care of task assignment. 
+
+## Steps
+
+* Before running this app, you must run the following sql script to initiate the DB Schema
+
+* CREATE TABLE task( task_id VARCHAR(20) NOT NULL PRIMARY KEY, skill VARCHAR(20) NOT NULL); 
+
+* CREATE TABLE team(team_id VARCHAR(20) NOT NULL PRIMARY KEY NOT NULL);
+
+* CREATE TABLE teamSkill(assignment_result_id INT UNSIGNED NOT NULL PRIMARY KEY, task_id VARCHAR(20) NOT NULL, skill     VARCHAR(20) NOT NULL);
+
+* CREATE TABLE assignmentResult(id INT UNSIGNED NOT NULL PRIMARY KEY, team_id VARCHAR(20) NOT NULL, task_id VARCHAR(20) NOT NULL);
+
+* CREATE USER 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345'
+
+NOTE: Make sure to provide all the privilages to user accessing your db, a sample script can be as following.
+
+GRANT ALL PRIVILEGES ON teamDb.task TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
+GRANT ALL PRIVILEGES ON teamDb.team TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
+GRANT ALL PRIVILEGES ON teamDb.teamTask TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
+GRANT ALL PRIVILEGES ON teamDb.assignmentResult TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
+
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
@@ -41,6 +68,6 @@ Each project is divided into three layers at most.
 
 ## Authors
 
-* **Minhaj Siddiqui** - *Initial work* - [PurpleBooth](http://www.minhajsiddiqui.com) 
+* **Minhaj Siddiqui** - *Initial work* - [Minhaj Siddiqui Website](http://www.minhajsiddiqui.com) 
 
 Note: Site may experience some issue on google chrome but by scrolling to bottom makes everything works fine
