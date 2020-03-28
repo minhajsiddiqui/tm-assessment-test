@@ -33,6 +33,7 @@ Each project is divided into three layers at most.
     A simple data access layer to talk to My SQL server.
 3. Controller
     LoaderDaemonController initiated all Database call.
+4. assignment-rest-api contains REST API    
 
 * TeamTaskServiceImpl is taking care of task assignment. 
 
