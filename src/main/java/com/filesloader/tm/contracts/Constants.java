@@ -5,4 +5,5 @@ public class Constants{
     public final static String FILE_NAME_TASK = "task.csv";
     public final static String FILE_NAME_TEAM = "team.csv";
     public final static String FILE_NAME_TEAMSKILL = "team_skill.csv";
+	public static final String FILE_PATH = "file_daemon_path";
 }
