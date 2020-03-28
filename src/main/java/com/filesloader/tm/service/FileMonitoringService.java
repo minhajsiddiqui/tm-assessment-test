@@ -2,8 +2,6 @@ package com.filesloader.tm.service;
 
 import java.io.IOException;
 import java.nio.file.*;
-import java.time.temporal.IsoFields;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +33,6 @@ public class FileMonitoringService extends Thread {
         final WatchService watchService = FileSystems.getDefault().newWatchService();
 
         final Path directory = Paths.get(_folderPath);
-        // "/home/minhaj/Documents/tm-assessment-files");
 
         final WatchKey watchKey = directory.register(watchService, StandardWatchEventKinds.ENTRY_CREATE);
 
@@ -55,7 +52,7 @@ public class FileMonitoringService extends Thread {
 
                 logger.info("Pushing data to DB Started");
 
-                pushFileToDB(filesContent);
+                _fileController.insertFileIntoDB(filesContent);
 
                 logger.info("Pushing data to DB Completed");
 
@@ -64,26 +61,10 @@ public class FileMonitoringService extends Thread {
                 if (file.toFile().delete()) {
                     logger.info("File Deleted ==> " + file);
                 } else {
-                    logger.info("Unable to Delete file  ==> " + file);
-                }
-
-                // Then delete all those files.
+                    logger.error("Unable to Delete file  ==> " + file);
+                }                
             }
-
-            // if(isFileReadyToBePushed) {
-            // pushFileToDB(filesContent);
-            // }
         }
-    }
-
-    private void pushFileToDB(Map<String, List<String[]>> filesContent) {
-
-        try {
-            _fileController.insertFileIntoDB(filesContent);
-        } finally {
-            isFileReadyToBePushed = false;
-        }
-
     }
 
     @Override
@@ -93,6 +74,8 @@ public class FileMonitoringService extends Thread {
         } catch (final IOException e) {
             // TODO: Use logger
             e.printStackTrace();
+            
+            logger.error(e);
         }
     }
 }

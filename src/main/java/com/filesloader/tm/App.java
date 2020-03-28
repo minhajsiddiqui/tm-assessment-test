@@ -7,16 +7,6 @@ import com.filesloader.tm.service.CSVFileReader;
 import com.filesloader.tm.service.FileMonitoringService;
 
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardWatchEventKinds;
-import java.nio.file.WatchEvent;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
-
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 /**
  * Hello world!
@@ -35,8 +25,6 @@ public final class App {
 
         Thread fileMonitoringThread = new FileMonitoringService(folderPath, fileReader, fileController);
         fileMonitoringThread.start();
-
         
-
     }
 }
