@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8259db8-69d0-4086-a905-87bb100554ae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/dao/ITaskAssignmentResultDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/dao/ITaskAssignmentResultDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/dao/TaskAssignmentResultDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/dao/TaskAssignmentResultDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/entity/AssignmentResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/rest/AssignmentResultRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/rest/AssignmentResultRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/service/ITaskAssignmentResultService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/service/ITaskAssignmentResultService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/service/TaskAssignmentResultServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assignment/springboot/restapi/service/TaskAssignmentResultServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/filesloader/tm/dao/TeamTaskDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/filesloader/tm/dao/TeamTaskDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/filesloader/tm/entity/TeamTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/filesloader/tm/entity/TeamTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/filesloader/tm/service/TaskAssignmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/com/filesloader/tm/service/TaskAssignmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/contracts/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/contracts/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/contracts/IFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/contracts/IFileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/contracts/IFileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/contracts/IFileReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/controller/LoaderDaemonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/controller/LoaderDaemonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/ITaskDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/ITaskDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/ITeamDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/ITeamDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/ITeamSkillDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/ITeamSkillDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/TaskDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/TaskDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/TeamDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/TeamDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/TeamSkillDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/dao/TeamSkillDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/entity/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/entity/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/entity/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/entity/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/entity/TeamSkill.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/entity/TeamSkill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/CSVFileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/CSVFileReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/FileMonitoringService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/FileMonitoringService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/ITaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/ITaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/ITeamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/ITeamService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/ITeamSkillService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/ITeamSkillService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/TaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/TaskServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/TeamServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/TeamServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/TeamSkillServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/filesloader/tm/service/TeamSkillServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/dao/TaskDAOImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/dao/TaskDAOImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/dao/TeamDAOImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/dao/TeamDAOImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/dao/TeamSkillDAOImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/test-classes/com/filesloader/tm/dao/TeamSkillDAOImplTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ZqFt9joFwmSWoMhKYZOwu8XHQQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="AssignmentResultApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="assignment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.assignment.springboot.restapi.AssignmentResultApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8259db8-69d0-4086-a905-87bb100554ae" name="Default Changelist" comment="" />
+      <created>1585558928120</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585558928120</updated>
+      <workItem from="1585558932251" duration="658000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
