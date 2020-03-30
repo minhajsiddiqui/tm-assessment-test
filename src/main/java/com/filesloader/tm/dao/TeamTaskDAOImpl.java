@@ -30,17 +30,20 @@ public class TeamTaskDAOImpl implements ITeamTaskDAO {
 
         try {
 
+            // TODO: Implement typed query rather here.
+            List result = queryTeamTask.getResultList();
 
-            //TODO: Something is wrong here. Need to fix it.
-            var result = queryTeamTask.getResultList();
+            for (Object value : result) {
+                TeamTask teamTask = new TeamTask();
 
-            // for (Object value : result)
-            // {
-            //     var teamTask = new TeamTask();
-            //     var a = (String[])value;
+                Object[] teamTaskArray = (Object[]) value;
 
-            //     ttList.add(teamTask);
-            // }
+                
+                teamTask.setTeamId(teamTaskArray[0].toString());
+                teamTask.setTaskId(teamTaskArray[1].toString());
+
+                ttList.add(teamTask);
+            }
 
             return ttList;
 

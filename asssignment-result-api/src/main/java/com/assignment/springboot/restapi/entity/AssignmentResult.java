@@ -1,7 +1,6 @@
 package com.assignment.springboot.restapi.entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "assignmentResult")
+@Table(name = "assignmentResult1")
 public class AssignmentResult implements Serializable {
 
 	private static final long serialVersionUID = 1L;

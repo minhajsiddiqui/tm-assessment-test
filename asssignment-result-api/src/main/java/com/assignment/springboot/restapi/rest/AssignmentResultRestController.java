@@ -3,6 +3,7 @@ package com.assignment.springboot.restapi.rest;
 import java.util.List;
 
 import com.assignment.springboot.restapi.entity.AssignmentResult;
+import com.assignment.springboot.restapi.entity.TeamTask;
 import com.assignment.springboot.restapi.service.ITaskAssignmentResultService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class AssignmentResultRestController {
 	@Autowired
 	public AssignmentResultRestController(ITaskAssignmentResultService theassignmentResultService) {
 		assignmentResultService = theassignmentResultService;
+	}
+
+	@GetMapping("/")
+	public String getIndexPage() {
+		return "This is index page";
 	}
 	
 	// expose "/assignmentResults" and return list of assignmentResults

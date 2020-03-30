@@ -6,14 +6,14 @@ Project is divided into three projects.
 2. Task Assignment Service
 3. REST API
 
-1. File Loader Daemon
+* File Loader Daemon
     This solution is responsible of loading files from certain location, parse it and then 
     insert it into db.
 
-2. Task Assignment Service
+* Task Assignment Service
     This solution is responsible of pushing TeamTask data into REST API.
 
-3. REST API
+* REST API
     A simple CRUD REST Api to insert/update/delete/update Task Assignment data.
 
 
@@ -41,15 +41,24 @@ Each project is divided into three layers at most.
 
 * Before running this app, you must run the following sql script to initiate the DB Schema
 
-* CREATE TABLE task( task_id VARCHAR(20) NOT NULL PRIMARY KEY, skill VARCHAR(20) NOT NULL); 
+CREATE TABLE task( task_id VARCHAR(20) NOT NULL PRIMARY KEY, skill VARCHAR(20) NOT NULL); 
 
-* CREATE TABLE team(team_id VARCHAR(20) NOT NULL PRIMARY KEY NOT NULL);
+CREATE TABLE team(team_id VARCHAR(20) NOT NULL PRIMARY KEY NOT NULL);
 
-* CREATE TABLE teamSkill(assignment_result_id INT UNSIGNED NOT NULL PRIMARY KEY, task_id VARCHAR(20) NOT NULL, skill     VARCHAR(20) NOT NULL);
+CREATE TABLE teamSkill(team_skill_id INT UNSIGNED NOT NULL PRIMARY KEY, team_id VARCHAR(20) NOT NULL, skill VARCHAR(20) NOT NULL);
 
-* CREATE TABLE assignmentResult(id INT UNSIGNED NOT NULL PRIMARY KEY, team_id VARCHAR(20) NOT NULL, task_id VARCHAR(20) NOT NULL);
+CREATE TABLE assignmentResult(id INT UNSIGNED NOT NULL AUTO_INCREMENT, team_id VARCHAR(20) NOT NULL, task_id VARCHAR(20) NOT NULL);
 
-* CREATE USER 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345'
+CREATE USER 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345'
+
+GRANT ALL PRIVILEGES ON teamDb.task TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
+GRANT ALL PRIVILEGES ON teamDb.team TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
+GRANT ALL PRIVILEGES ON teamDb.teamTask TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
+GRANT ALL PRIVILEGES ON teamDb.assignmentResult TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+
 
 NOTE: Make sure to provide all the privilages to user accessing your db, a sample script can be as following.
 

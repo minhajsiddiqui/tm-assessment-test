@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import com.assignment.springboot.restapi.entity.AssignmentResult;
+import com.assignment.springboot.restapi.entity.TeamTask;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -50,7 +51,7 @@ public class TaskAssignmentResultDAOImpl implements ITaskAssignmentResultDAO {
 
 		// delete object with primary key
 		final Query theQuery = entityManager.createQuery(
-							"delete from assignment_result where assignment_result_id=:assignmentResultId");
+							"delete from assignmentResult where id=:assignmentResultId");
 		
 		theQuery.setParameter("assignmentResultId", theId);
 		

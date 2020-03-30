@@ -15,10 +15,10 @@ public class TeamTask implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", updatable = false, nullable = false)
     private int Id;
-
+    
     @Column(name = "team_id", nullable = false)
     private String teamId;
 

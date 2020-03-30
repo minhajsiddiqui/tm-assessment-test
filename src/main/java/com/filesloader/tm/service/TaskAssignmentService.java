@@ -1,6 +1,7 @@
 package com.filesloader.tm.service;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.filesloader.tm.FileLoaderDaemonProp;
 import com.filesloader.tm.contracts.Constants;
 import com.filesloader.tm.dao.TeamTaskDAOImpl;
+import com.filesloader.tm.entity.TeamTask;
 
 import org.apache.log4j.Logger;
 
@@ -36,7 +38,7 @@ public class TaskAssignmentService extends Thread {
     public void processTeamTasks() {
 
         // Get all related team tasks
-        var teamTasksList = _teamTaskService.findAll();
+        List<TeamTask> teamTasksList = _teamTaskService.findAll();
 
         if (teamTasksList.size() > 0) {
             ObjectMapper mapper = new ObjectMapper();

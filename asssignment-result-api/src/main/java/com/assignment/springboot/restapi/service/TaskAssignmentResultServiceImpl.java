@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.assignment.springboot.restapi.dao.ITaskAssignmentResultDAO;
 import com.assignment.springboot.restapi.entity.AssignmentResult;
+import com.assignment.springboot.restapi.entity.TeamTask;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
