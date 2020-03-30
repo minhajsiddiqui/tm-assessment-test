@@ -37,9 +37,11 @@ Each project is divided into three layers at most.
 
 * TeamTaskServiceImpl is taking care of task assignment. 
 
-## Steps
+## Steps to run
 
-* Before running this app, you must run the following sql script to initiate the DB Schema
+1. Before running this app, you must run the following sql script to initiate the DB Schema
+
+CREATE USER 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345'
 
 CREATE TABLE task( task_id VARCHAR(20) NOT NULL PRIMARY KEY, skill VARCHAR(20) NOT NULL); 
 
@@ -47,17 +49,7 @@ CREATE TABLE team(team_id VARCHAR(20) NOT NULL PRIMARY KEY NOT NULL);
 
 CREATE TABLE teamSkill(team_skill_id INT UNSIGNED NOT NULL PRIMARY KEY, team_id VARCHAR(20) NOT NULL, skill VARCHAR(20) NOT NULL);
 
-CREATE TABLE assignmentResult(id INT UNSIGNED NOT NULL AUTO_INCREMENT, team_id VARCHAR(20) NOT NULL, task_id VARCHAR(20) NOT NULL);
-
-CREATE USER 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345'
-
-GRANT ALL PRIVILEGES ON teamDb.task TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
-
-GRANT ALL PRIVILEGES ON teamDb.team TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
-
-GRANT ALL PRIVILEGES ON teamDb.teamTask TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
-
-GRANT ALL PRIVILEGES ON teamDb.assignmentResult TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+CREATE TABLE assignment_result(id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, team_id VARCHAR(20) NOT NULL, task_id VARCHAR(20) NOT NULL);
 
 
 NOTE: Make sure to provide all the privilages to user accessing your db, a sample script can be as following.
@@ -68,16 +60,29 @@ GRANT ALL PRIVILEGES ON teamDb.team TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmus
 
 GRANT ALL PRIVILEGES ON teamDb.teamTask TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
 
-GRANT ALL PRIVILEGES ON teamDb.assignmentResult TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
+GRANT ALL PRIVILEGES ON teamDb.assignment_result TO 'dbadmin'@'localhost' IDENTIFIED BY 'tmuseR$12345';
 
+2. Run Spring boot app from folder "./tm-assignment-restapi" to insert Team Task data in assignment_result.
+
+Note:
+Right now only Post mapping works to justify the docs of java test assessment.
+
+3. Java Loader Daemon and Assignment Task service must be configured in order to run this application.
+    This configuration is required to make this application more flexible and ready to be used in any envionrment.
+    * Make sure to replace correct path according to your OS for those 3 files required to be watched once 
+      copied in that folder i-e: go to config.properties and change 
+      file_daemon_path=/home/{usr_name}/Documents/{tm-assessment-files} ==> to your path 
+    * Make sure to replace correct path for log
+      log4j.appender.file.File=/home/{user_name}/Documents/{tm-assessment-files}/log4j-application.log
+
+NOTE: 
+ALWAYS use same file name as mentioned in "/Constants.java" class.
 
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Springboot](https://spring.io/projects/spring-boot) - Used to create REST API
 
-## Authors
+## Author
 
-* **Minhaj Siddiqui** - *Initial work* - [Minhaj Siddiqui Website](http://www.minhajsiddiqui.com) 
-
-Note: Site may experience some issue on google chrome but by scrolling to bottom makes everything works fine
+* **Minhaj Siddiqui** - *JAVA Test* - [Minhaj Siddiqui Website](http://www.minhajsiddiqui.com)
