@@ -90,8 +90,7 @@ public class TaskAssignmentService extends Thread {
         while (true) {
             try {
                 processTeamTasks();
-                Thread.sleep(Integer.parseInt(FileLoaderDaemonProp.getInstance().getPropValues()
-                        .get(Constants.TIME_TO_POST_ASSIGNMENT_RESULT_IN_SEC)));
+                Thread.sleep(20000);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
