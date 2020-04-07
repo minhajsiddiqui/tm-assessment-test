@@ -1,0 +1,77 @@
+minhaj@minhaj-linux:~/Documents/Work/Jobs/TM_Jobs/tm-assessment-test/tm-assignment-restapi$  /usr/lib/jvm/jdk-13/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:34593 -Dfile.encoding=UTF-8 @/tmp/cp_b3f31xxm9usltsbsb0fg3hhet.argfile com.tmassignment.restapi.tmassignmentrestapi.AssignmentResultApplication 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.6.RELEASE)
+
+2020-04-03 19:38:09.949  INFO 20545 --- [  restartedMain] c.t.r.t.AssignmentResultApplication      : Starting AssignmentResultApplication on minhaj-linux with PID 20545 (/home/minhaj/Documents/Work/Jobs/TM_Jobs/tm-assessment-test/tm-assignment-restapi/target/classes started by minhaj in /home/minhaj/Documents/Work/Jobs/TM_Jobs/tm-assessment-test/tm-assignment-restapi)
+2020-04-03 19:38:09.957  INFO 20545 --- [  restartedMain] c.t.r.t.AssignmentResultApplication      : No active profile set, falling back to default profiles: default
+2020-04-03 19:38:10.139  INFO 20545 --- [  restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-04-03 19:38:10.141  INFO 20545 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-03 19:38:10.142  INFO 20545 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-03 19:38:11.998  INFO 20545 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-03 19:38:12.069  INFO 20545 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52ms. Found 0 JPA repository interfaces.
+2020-04-03 19:38:13.179  INFO 20545 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-03 19:38:13.197  INFO 20545 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-03 19:38:13.198  INFO 20545 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-03 19:38:13.415  INFO 20545 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-03 19:38:13.415  INFO 20545 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3273 ms
+2020-04-03 19:38:13.739  INFO 20545 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-03 19:38:14.419  INFO 20545 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-03 19:38:14.542  INFO 20545 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-03 19:38:14.784  INFO 20545 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-03 19:38:15.082  INFO 20545 --- [  restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-03 19:38:15.296  INFO 20545 --- [  restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-03 19:38:16.312  INFO 20545 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-03 19:38:16.324  INFO 20545 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 19:38:16.589  WARN 20545 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 19:38:16.891  INFO 20545 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 19:38:17.234  INFO 20545 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-03 19:38:17.371  INFO 20545 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-03 19:38:17.380  INFO 20545 --- [  restartedMain] c.t.r.t.AssignmentResultApplication      : Started AssignmentResultApplication in 8.068 seconds (JVM running for 9.379)
+2020-04-03 19:47:27.790  INFO 20545 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-03 19:47:27.791  INFO 20545 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-03 19:47:27.816  INFO 20545 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+minhaj@minhaj-linux:~/Documents/Work/Jobs/TM_Jobs/tm-assessment-test/tm-assignment-restapi$  cd /home/minhaj/Documents/Work/Jobs/TM_Jobs/tm-assessment-test/tm-assignment-restapi ; /usr/lib/jvm/jdk-13/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:33479 -Dfile.encoding=UTF-8 @/tmp/cp_b3f31xxm9usltsbsb0fg3hhet.argfile com.tmassignment.restapi.tmassignmentrestapi.AssignmentResultApplication 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.6.RELEASE)
+
+2020-04-03 19:51:58.950  INFO 23327 --- [  restartedMain] c.t.r.t.AssignmentResultApplication      : Starting AssignmentResultApplication on minhaj-linux with PID 23327 (/home/minhaj/Documents/Work/Jobs/TM_Jobs/tm-assessment-test/tm-assignment-restapi/target/classes started by minhaj in /home/minhaj/Documents/Work/Jobs/TM_Jobs/tm-assessment-test/tm-assignment-restapi)
+2020-04-03 19:51:58.957  INFO 23327 --- [  restartedMain] c.t.r.t.AssignmentResultApplication      : No active profile set, falling back to default profiles: default
+2020-04-03 19:51:59.100  INFO 23327 --- [  restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/home/minhaj/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-04-03 19:51:59.102  INFO 23327 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-03 19:51:59.106  INFO 23327 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-03 19:52:00.364  INFO 23327 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-03 19:52:00.414  INFO 23327 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 0 JPA repository interfaces.
+2020-04-03 19:52:01.461  INFO 23327 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-04-03 19:52:01.488  INFO 23327 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-03 19:52:01.489  INFO 23327 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-03 19:52:01.677  INFO 23327 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-03 19:52:01.677  INFO 23327 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2568 ms
+2020-04-03 19:52:01.961  INFO 23327 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-03 19:52:02.552  INFO 23327 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-03 19:52:02.646  INFO 23327 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-03 19:52:02.822  INFO 23327 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-03 19:52:03.105  INFO 23327 --- [  restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-03 19:52:03.300  INFO 23327 --- [  restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-04-03 19:52:04.058  INFO 23327 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-03 19:52:04.069  INFO 23327 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 19:52:04.280  WARN 23327 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 19:52:04.528  INFO 23327 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 19:52:04.845  INFO 23327 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-03 19:52:04.934  INFO 23327 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-03 19:52:04.940  INFO 23327 --- [  restartedMain] c.t.r.t.AssignmentResultApplication      : Started AssignmentResultApplication in 7.295 seconds (JVM running for 8.533)
+2020-04-03 19:52:57.328  INFO 23327 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-03 19:52:57.328  INFO 23327 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-03 19:52:57.345  INFO 23327 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+Posint assignment result data

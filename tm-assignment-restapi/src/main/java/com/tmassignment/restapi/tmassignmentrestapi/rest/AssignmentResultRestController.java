@@ -5,6 +5,7 @@ import java.util.List;
 import com.tmassignment.restapi.tmassignmentrestapi.entity.AssignmentResult;
 import com.tmassignment.restapi.tmassignmentrestapi.service.ITaskAssignmentResultService;
 
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,6 +56,8 @@ public class AssignmentResultRestController {
 	
 	@PostMapping("/assignmentResults")
 	public List<AssignmentResult> addassignmentResult(@RequestBody List<AssignmentResult> theassignmentResults) {
+		System.out.println("Posint assignment result data");
+		
 		assignmentResultService.save(theassignmentResults);
 		
 		return theassignmentResults;

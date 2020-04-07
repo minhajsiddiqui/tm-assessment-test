@@ -1,0 +1,785 @@
+        team
+        (team_id) 
+    values
+        (?)
+2020-04-03 19:52:40 DEBUG SqlExceptionHelper:126 - could not execute statement [n/a]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '"TEAM_02"' for key 'PRIMARY'
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+        at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3226)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3751)
+        at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:91)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+        at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+        at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+        at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+        at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+        at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1344)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 WARN  SqlExceptionHelper:137 - SQL Error: 1062, SQLState: 23000
+2020-04-03 19:52:40 ERROR SqlExceptionHelper:142 - Duplicate entry '"TEAM_02"' for key 'PRIMARY'
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:203)
+        at org.hibernate.internal.AbstractSharedSessionContract.markForRollbackOnly(AbstractSharedSessionContract.java:392)
+        at org.hibernate.internal.ExceptionConverterImpl.handlePersistenceException(ExceptionConverterImpl.java:297)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:155)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1348)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:192)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 ERROR TeamDAOImpl:53 - Error while saving data => javax.persistence.RollbackException: Error while committing the transaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:81 - begin
+2020-04-03 19:52:40 DEBUG AbstractSaveEventListener:133 - Generated identifier: "TEAM_03", using strategy: org.hibernate.id.Assigned
+2020-04-03 19:52:40 DEBUG TransactionImpl:98 - committing
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:139 - Processing flush-time cascades
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:192 - Dirty checking collections
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:113 - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:120 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2020-04-03 19:52:40 DEBUG EntityPrinter:110 - Listing entities:
+2020-04-03 19:52:40 DEBUG EntityPrinter:117 - com.filesloader.tm.entity.Team{teamId="TEAM_03"}
+2020-04-03 19:52:40 DEBUG SQL:127 - 
+    insert 
+    into
+        team
+        (team_id) 
+    values
+        (?)
+Hibernate: 
+    insert 
+    into
+        team
+        (team_id) 
+    values
+        (?)
+2020-04-03 19:52:40 DEBUG SqlExceptionHelper:126 - could not execute statement [n/a]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '"TEAM_03"' for key 'PRIMARY'
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+        at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3226)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3751)
+        at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:91)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+        at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+        at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+        at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+        at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+        at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1344)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 WARN  SqlExceptionHelper:137 - SQL Error: 1062, SQLState: 23000
+2020-04-03 19:52:40 ERROR SqlExceptionHelper:142 - Duplicate entry '"TEAM_03"' for key 'PRIMARY'
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:203)
+        at org.hibernate.internal.AbstractSharedSessionContract.markForRollbackOnly(AbstractSharedSessionContract.java:392)
+        at org.hibernate.internal.ExceptionConverterImpl.handlePersistenceException(ExceptionConverterImpl.java:297)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:155)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1348)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:192)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 ERROR TeamDAOImpl:53 - Error while saving data => javax.persistence.RollbackException: Error while committing the transaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:81 - begin
+2020-04-03 19:52:40 DEBUG AbstractSaveEventListener:133 - Generated identifier: "TEAM_04", using strategy: org.hibernate.id.Assigned
+2020-04-03 19:52:40 DEBUG TransactionImpl:98 - committing
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:139 - Processing flush-time cascades
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:192 - Dirty checking collections
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:113 - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:120 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2020-04-03 19:52:40 DEBUG EntityPrinter:110 - Listing entities:
+2020-04-03 19:52:40 DEBUG EntityPrinter:117 - com.filesloader.tm.entity.Team{teamId="TEAM_04"}
+2020-04-03 19:52:40 DEBUG SQL:127 - 
+    insert 
+    into
+        team
+        (team_id) 
+    values
+        (?)
+Hibernate: 
+    insert 
+    into
+        team
+        (team_id) 
+    values
+        (?)
+2020-04-03 19:52:40 DEBUG SqlExceptionHelper:126 - could not execute statement [n/a]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '"TEAM_04"' for key 'PRIMARY'
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+        at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3226)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3751)
+        at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:91)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+        at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+        at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+        at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+        at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+        at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1344)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 WARN  SqlExceptionHelper:137 - SQL Error: 1062, SQLState: 23000
+2020-04-03 19:52:40 ERROR SqlExceptionHelper:142 - Duplicate entry '"TEAM_04"' for key 'PRIMARY'
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:203)
+        at org.hibernate.internal.AbstractSharedSessionContract.markForRollbackOnly(AbstractSharedSessionContract.java:392)
+        at org.hibernate.internal.ExceptionConverterImpl.handlePersistenceException(ExceptionConverterImpl.java:297)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:155)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1348)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:192)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 ERROR TeamDAOImpl:53 - Error while saving data => javax.persistence.RollbackException: Error while committing the transaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:81 - begin
+2020-04-03 19:52:40 DEBUG AbstractSaveEventListener:133 - Generated identifier: "TEAM_05", using strategy: org.hibernate.id.Assigned
+2020-04-03 19:52:40 DEBUG TransactionImpl:98 - committing
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:139 - Processing flush-time cascades
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:192 - Dirty checking collections
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:113 - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+2020-04-03 19:52:40 DEBUG AbstractFlushingEventListener:120 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2020-04-03 19:52:40 DEBUG EntityPrinter:110 - Listing entities:
+2020-04-03 19:52:40 DEBUG EntityPrinter:117 - com.filesloader.tm.entity.Team{teamId="TEAM_05"}
+2020-04-03 19:52:40 DEBUG SQL:127 - 
+    insert 
+    into
+        team
+        (team_id) 
+    values
+        (?)
+Hibernate: 
+    insert 
+    into
+        team
+        (team_id) 
+    values
+        (?)
+2020-04-03 19:52:40 DEBUG SqlExceptionHelper:126 - could not execute statement [n/a]
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '"TEAM_05"' for key 'PRIMARY'
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+        at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+        at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+        at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+        at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3226)
+        at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3751)
+        at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:91)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+        at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+        at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+        at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+        at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+        at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+        at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:108)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1344)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 WARN  SqlExceptionHelper:137 - SQL Error: 1062, SQLState: 23000
+2020-04-03 19:52:40 ERROR SqlExceptionHelper:142 - Duplicate entry '"TEAM_05"' for key 'PRIMARY'
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:203)
+        at org.hibernate.internal.AbstractSharedSessionContract.markForRollbackOnly(AbstractSharedSessionContract.java:392)
+        at org.hibernate.internal.ExceptionConverterImpl.handlePersistenceException(ExceptionConverterImpl.java:297)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:155)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+        at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+        at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1348)
+        at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:435)
+        at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3221)
+        at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2389)
+        at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG JdbcResourceLocalTransactionCoordinatorImpl:324 - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:324)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:192)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+        at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+        at com.filesloader.tm.dao.TeamDAOImpl.save(TeamDAOImpl.java:45)
+        at com.filesloader.tm.service.TeamServiceImpl.save(TeamServiceImpl.java:31)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertTeamData(LoaderDaemonController.java:90)
+        at com.filesloader.tm.controller.LoaderDaemonController.lambda$0(LoaderDaemonController.java:57)
+        at java.base/java.util.HashMap.forEach(HashMap.java:1338)
+        at com.filesloader.tm.controller.LoaderDaemonController.insertFileIntoDB(LoaderDaemonController.java:50)
+        at com.filesloader.tm.service.FileMonitoringService.startMonitoring(FileMonitoringService.java:55)
+        at com.filesloader.tm.service.FileMonitoringService.run(FileMonitoringService.java:73)
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 DEBUG TransactionImpl:131 - rollback() called on an inactive transaction
+2020-04-03 19:52:40 ERROR TeamDAOImpl:53 - Error while saving data => javax.persistence.RollbackException: Error while committing the transaction
+2020-04-03 19:52:40 INFO  FileMonitoringService:57 - Pushing data to DB Completed
+2020-04-03 19:52:40 INFO  FileMonitoringService:59 - Deleting file ==> /home/minhaj/Documents/tm-assessment-files/team_skill.csv
+2020-04-03 19:52:40 INFO  FileMonitoringService:62 - File Deleted ==> /home/minhaj/Documents/tm-assessment-files/team_skill.csv
+2020-04-03 19:52:56 DEBUG QueryTranslatorFactoryInitiator:45 - QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@2848109
+2020-04-03 19:52:56 DEBUG QueryTranslatorImpl:288 - parse() - HQL: SELECT Distinct tk.teamId, t.taskId FROM com.filesloader.tm.entity.TeamSkill tk INNER JOIN com.filesloader.tm.entity.Task t On tk.skill = t.skill
+2020-04-03 19:52:56 DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2020-04-03 19:52:56 DEBUG QueryTranslatorImpl:309 - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       +-[FROM] Node: 'FROM'
+       |  +-[RANGE] Node: 'RANGE'
+       |  |  +-[DOT] Node: '.'
+       |  |  |  +-[DOT] Node: '.'
+       |  |  |  |  +-[DOT] Node: '.'
+       |  |  |  |  |  +-[DOT] Node: '.'
+       |  |  |  |  |  |  +-[IDENT] Node: 'com'
+       |  |  |  |  |  |  \-[IDENT] Node: 'filesloader'
+       |  |  |  |  |  \-[IDENT] Node: 'tm'
+       |  |  |  |  \-[IDENT] Node: 'entity'
+       |  |  |  \-[IDENT] Node: 'TeamSkill'
+       |  |  \-[ALIAS] Node: 'tk'
+       |  \-[JOIN] Node: 'JOIN'
+       |     +-[INNER] Node: 'INNER'
+       |     +-[DOT] Node: '.'
+       |     |  +-[DOT] Node: '.'
+       |     |  |  +-[DOT] Node: '.'
+       |     |  |  |  +-[DOT] Node: '.'
+       |     |  |  |  |  +-[IDENT] Node: 'com'
+       |     |  |  |  |  \-[IDENT] Node: 'filesloader'
+       |     |  |  |  \-[IDENT] Node: 'tm'
+       |     |  |  \-[IDENT] Node: 'entity'
+       |     |  \-[IDENT] Node: 'Task'
+       |     +-[ALIAS] Node: 't'
+       |     \-[WITH] Node: 'with'
+       |        \-[EQ] Node: '='
+       |           +-[DOT] Node: '.'
+       |           |  +-[IDENT] Node: 'tk'
+       |           |  \-[IDENT] Node: 'skill'
+       |           \-[DOT] Node: '.'
+       |              +-[IDENT] Node: 't'
+       |              \-[IDENT] Node: 'skill'
+       \-[SELECT] Node: 'SELECT'
+          +-[DISTINCT] Node: 'Distinct'
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'tk'
+          |  \-[IDENT] Node: 'teamId'
+          \-[DOT] Node: '.'
+             +-[IDENT] Node: 't'
+             \-[IDENT] Node: 'taskId'
+
+2020-04-03 19:52:56 DEBUG HqlSqlBaseWalker:124 - select << begin [level=1, statement=select]
+2020-04-03 19:52:56 DEBUG FromElement:149 - FromClause{level=1} : com.filesloader.tm.entity.TeamSkill (tk) -> teamskill0_
+2020-04-03 19:52:56 DEBUG HqlSqlWalker:476 - Creating entity-join FromElement [t -> com.filesloader.tm.entity.Task]
+2020-04-03 19:52:56 DEBUG FromElement:149 - FromClause{level=1} : com.filesloader.tm.entity.Task (t) -> task1_
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : tk -> teamskill0_.team_skill_id
+2020-04-03 19:52:56 DEBUG DotNode:698 - getDataType() : skill -> org.hibernate.type.StringType@33ecda92
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : tk.skill -> teamskill0_.skill
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : t -> task1_.task_id
+2020-04-03 19:52:56 DEBUG DotNode:698 - getDataType() : skill -> org.hibernate.type.StringType@33ecda92
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : t.skill -> task1_.skill
+2020-04-03 19:52:56 DEBUG HqlSqlWalker:498 - handleWithFragment() : -- with clause --
+ \-[WITH] SqlNode: 'with'
+    \-[EQ] BinaryLogicOperatorNode: '='
+       +-[DOT] DotNode: 'teamskill0_.skill' {propertyName=skill,dereferenceType=PRIMITIVE,getPropertyPath=skill,path=tk.skill,tableAlias=teamskill0_,className=com.filesloader.tm.entity.TeamSkill,classAlias=tk}
+       |  +-[ALIAS_REF] IdentNode: 'teamskill0_.team_skill_id' {alias=tk, className=com.filesloader.tm.entity.TeamSkill, tableAlias=teamskill0_}
+       |  \-[IDENT] IdentNode: 'skill' {originalText=skill}
+       \-[DOT] DotNode: 'task1_.skill' {propertyName=skill,dereferenceType=PRIMITIVE,getPropertyPath=skill,path=t.skill,tableAlias=task1_,className=com.filesloader.tm.entity.Task,classAlias=t}
+          +-[ALIAS_REF] IdentNode: 'task1_.task_id' {alias=t, className=com.filesloader.tm.entity.Task, tableAlias=task1_}
+          \-[IDENT] IdentNode: 'skill' {originalText=skill}
+
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : tk -> teamskill0_.team_skill_id
+2020-04-03 19:52:56 DEBUG DotNode:698 - getDataType() : teamId -> org.hibernate.type.StringType@33ecda92
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : tk.teamId -> teamskill0_.team_id
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : t -> task1_.task_id
+2020-04-03 19:52:56 DEBUG DotNode:698 - getDataType() : taskId -> org.hibernate.type.StringType@33ecda92
+2020-04-03 19:52:56 DEBUG FromReferenceNode:60 - Resolved : t.taskId -> task1_.task_id
+2020-04-03 19:52:56 DEBUG HqlSqlBaseWalker:128 - select : finishing up [level=1, statement=select]
+2020-04-03 19:52:56 DEBUG HqlSqlWalker:752 - processQuery() :  ( SELECT ( {select clause} Distinct ( teamskill0_.team_id teamskill0_.team_skill_id teamId ) ( task1_.task_id task1_.task_id taskId ) ) ( FromClause{level=1} teamSkill teamskill0_ task ) )
+2020-04-03 19:52:56 DEBUG JoinProcessor:128 - Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    |  +-SqlNode
+    |  +-DotNode
+    |  | persister: SingleTableEntityPersister(com.filesloader.tm.entity.TeamSkill)
+    |  | referencedTables: [teamSkill]
+    |  | path: tk.teamId
+    |  | originalPropertyName: teamId
+    |  |  +-IdentNode
+    |  |  | persister: SingleTableEntityPersister(com.filesloader.tm.entity.TeamSkill)
+    |  |  | referencedTables: null
+    |  |  | originalText: tk
+    |  |  \-IdentNode
+    |  |    persister: null
+    |  |    referencedTables: null
+    |  |    originalText: teamId
+    |  +-SqlNode
+    |  +-DotNode
+    |  | persister: SingleTableEntityPersister(com.filesloader.tm.entity.Task)
+    |  | referencedTables: null
+    |  | path: t.taskId
+    |  | originalPropertyName: taskId
+    |  |  +-IdentNode
+    |  |  | persister: SingleTableEntityPersister(com.filesloader.tm.entity.Task)
+    |  |  | referencedTables: null
+    |  |  | originalText: t
+    |  |  \-IdentNode
+    |  |    persister: null
+    |  |    referencedTables: null
+    |  |    originalText: taskId
+    |  \-SqlNode
+    \-FromClause
+       +-FromElement
+       \-EntityJoinFromElement
+
+2020-04-03 19:52:56 DEBUG JoinProcessor:295 - Using FROM fragment [teamSkill teamskill0_]
+2020-04-03 19:52:56 DEBUG JoinProcessor:295 - Using FROM fragment [inner join task task1_ on (teamskill0_.skill=task1_.skill)]
+2020-04-03 19:52:56 DEBUG HqlSqlBaseWalker:132 - select >> end [level=1, statement=select]
+2020-04-03 19:52:56 DEBUG QueryTranslatorImpl:275 - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (task,teamSkill)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[DISTINCT] SqlNode: 'Distinct'
+    |  +-[DOT] DotNode: 'teamskill0_.team_id' {propertyName=teamId,dereferenceType=PRIMITIVE,getPropertyPath=teamId,path=tk.teamId,tableAlias=teamskill0_,className=com.filesloader.tm.entity.TeamSkill,classAlias=tk}
+    |  |  +-[ALIAS_REF] IdentNode: 'teamskill0_.team_skill_id' {alias=tk, className=com.filesloader.tm.entity.TeamSkill, tableAlias=teamskill0_}
+    |  |  \-[IDENT] IdentNode: 'teamId' {originalText=teamId}
+    |  +-[SELECT_COLUMNS] SqlNode: ' as col_0_0_'
+    |  +-[DOT] DotNode: 'task1_.task_id' {propertyName=taskId,dereferenceType=PRIMITIVE,getPropertyPath=taskId,path=t.taskId,tableAlias=task1_,className=com.filesloader.tm.entity.Task,classAlias=t}
+    |  |  +-[ALIAS_REF] IdentNode: 'task1_.task_id' {alias=t, className=com.filesloader.tm.entity.Task, tableAlias=task1_}
+    |  |  \-[IDENT] IdentNode: 'taskId' {originalText=taskId}
+    |  \-[SELECT_COLUMNS] SqlNode: ' as col_1_0_'
+    \-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=2, fromElements=2, fromElementByClassAlias=[t, tk], fromElementByTableAlias=[teamskill0_, task1_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       +-[FROM_FRAGMENT] FromElement: 'teamSkill teamskill0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=tk,role=null,tableName=teamSkill,tableAlias=teamskill0_,origin=null,columns={,className=com.filesloader.tm.entity.TeamSkill}}
+       \-[ENTITY_JOIN] EntityJoinFromElement: 'inner join task task1_ on (teamskill0_.skill=task1_.skill)' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=t,role=null,tableName=task,tableAlias=task1_,origin=null,columns={,className=com.filesloader.tm.entity.Task}}
+
+2020-04-03 19:52:56 DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2020-04-03 19:52:56 DEBUG QueryTranslatorImpl:254 - HQL: SELECT Distinct tk.teamId, t.taskId FROM com.filesloader.tm.entity.TeamSkill tk INNER JOIN com.filesloader.tm.entity.Task t On tk.skill = t.skill
+2020-04-03 19:52:56 DEBUG QueryTranslatorImpl:255 - SQL: select distinct teamskill0_.team_id as col_0_0_, task1_.task_id as col_1_0_ from teamSkill teamskill0_ inner join task task1_ on (teamskill0_.skill=task1_.skill)
+2020-04-03 19:52:56 DEBUG ErrorTracker:97 - throwQueryException() : no errors
+2020-04-03 19:52:56 DEBUG SQL:127 - 
+    select
+        distinct teamskill0_.team_id as col_0_0_,
+        task1_.task_id as col_1_0_ 
+    from
+        teamSkill teamskill0_ 
+    inner join
+        task task1_ 
+            on (
+                teamskill0_.skill=task1_.skill
+            )
+Hibernate: 
+    select
+        distinct teamskill0_.team_id as col_0_0_,
+        task1_.task_id as col_1_0_ 
+    from
+        teamSkill teamskill0_ 
+    inner join
+        task task1_ 
+            on (
+                teamskill0_.skill=task1_.skill
+            )
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 0
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 1
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 2
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 3
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 4
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 5
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 6
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 7
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 8
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 9
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 10
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 11
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 12
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 13
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 14
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 15
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 16
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 17
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 18
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 19
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 20
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 21
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 22
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 23
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 24
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 25
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 26
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 27
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 28
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 29
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 30
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 31
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 32
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 33
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 34
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 35
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 36
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 37
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 38
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 39
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 40
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 41
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 42
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 43
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 44
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 45
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 46
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 47
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 48
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 49
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 50
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 51
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 52
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 53
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 54
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 55
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 56
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 57
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 58
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 59
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 60
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 61
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 62
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 63
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 64
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 65
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 66
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 67
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 68
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 69
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 70
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 71
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 72
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 73
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 74
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 75
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 76
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 77
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 78
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 79
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 80
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 81
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 82
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 83
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 84
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 85
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 86
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 87
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 88
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 89
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 90
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 91
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 92
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 93
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 94
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 95
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 96
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 97
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 98
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 99
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 100
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG Loader:384 - Result set row: 101
+2020-04-03 19:52:56 DEBUG Loader:1586 - Result row: 
+2020-04-03 19:52:56 DEBUG LogicalConnectionManagedImpl:159 - Initiating JDBC connection release from afterTransaction
+2020-04-03 19:52:57 INFO  FileMonitoringService:64 - Getting ready to post data to rest - api at http://localhost:8080/api/assignmentResults
+2020-04-03 19:52:58 INFO  FileMonitoringService:76 - Successfully inserted assignement result in db
+2020-04-03 19:53:03 DEBUG DriverManagerConnectionProviderImpl:259 - Connection pool now considered primed; min-size will be maintained
+2020-04-03 19:53:06 DEBUG DriverManagerConnectionProviderImpl:259 - Connection pool now considered primed; min-size will be maintained
